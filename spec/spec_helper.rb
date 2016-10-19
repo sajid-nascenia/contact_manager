@@ -21,6 +21,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'factory_girl_rails'
+require 'database_cleaner'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -55,6 +56,10 @@ RSpec.configure do |config|
 
   config.before(:all) do
     FactoryGirl.reload
+  end
+
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
   end
 
 # The settings below are suggested to provide a good initial experience
