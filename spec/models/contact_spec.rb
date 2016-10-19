@@ -14,6 +14,8 @@ describe Contact do
     expect(FactoryGirl.build(:contact, lastname: nil)).not_to be_valid
   end
 
+
+
   # Checking the instance methods
   it "returns a contact's full name as a string" do
     contact = FactoryGirl.create(:contact, firstname: 'John', lastname: 'Doe')
