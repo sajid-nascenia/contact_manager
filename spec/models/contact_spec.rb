@@ -1,21 +1,21 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Contact do
   it 'has a valid factory' do
-    expect(FactoryGirl.create(:contact)).to be_valid
+    expect(create(:contact)).to be_valid
   end
 
   # Checking the validations
   it 'is invalid without a firstname' do
-    expect(FactoryGirl.build(:contact, firstname: nil)).not_to be_valid
+    expect(build(:contact, firstname: nil)).not_to be_valid
   end
 
   it 'is invalid without a lastname' do
-    expect(FactoryGirl.build(:contact, lastname: nil)).not_to be_valid
+    expect(build(:contact, lastname: nil)).not_to be_valid
   end
 
   it 'is invalid without an email address' do
-    expect(FactoryGirl.build(:contact, email: nil)).not_to be_valid
+    expect(build(:contact, email: nil)).not_to be_valid
   end
 
   it 'is invalid with a duplicate email address' do
@@ -27,16 +27,16 @@ describe Contact do
 
   # Checking the instance methods
   it "returns a contact's full name as a string" do
-    contact = FactoryGirl.create(:contact, firstname: 'John', lastname: 'Doe')
+    contact = create(:contact, firstname: 'John', lastname: 'Doe')
     expect(contact.name).to eq('John Doe')
   end
 
   # Checking class methods
   describe '#by_letter' do
     before :each do
-      @smith = FactoryGirl.create(:contact, lastname: 'Smith')
-      @jones = FactoryGirl.create(:contact, lastname: 'Jones')
-      @bujo = FactoryGirl.create(:contact, lastname: 'Bujo')
+      @smith = create(:contact, lastname: 'Smith')
+      @jones = create(:contact, lastname: 'Jones')
+      @bujo = create(:contact, lastname: 'Bujo')
     end
 
     context 'matching letters' do
