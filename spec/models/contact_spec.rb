@@ -14,7 +14,16 @@ describe Contact do
     expect(FactoryGirl.build(:contact, lastname: nil)).not_to be_valid
   end
 
+  it 'is invalid without an email address' do
+    expect(FactoryGirl.build(:contact, email: nil)).not_to be_valid
+  end
 
+  it 'is invalid with a duplicate email address' do
+    Contact.create(firstname: 'Joe', lastname: 'Smith', email: 'smith@example.com')
+    contact = Contact.build(firstname: 'Jane', lastname: 'Bujo', email: 'smith@example.com')
+    contact.valid?
+    expect(contact.errors[:email]).to include('has already be taken')
+  end
 
   # Checking the instance methods
   it "returns a contact's full name as a string" do
@@ -25,9 +34,9 @@ describe Contact do
   # Checking class methods
   describe '#by_letter' do
     before :each do
-      @smith = FactoryGirl.create(:contact, firstname: 'Walden', lastname: 'Smith')
-      @jones = FactoryGirl.create(:contact, firstname: 'Michael', lastname: 'Jones')
-      @bujo = FactoryGirl.create(:contact, firstname: 'Sonia', lastname: 'Bujo')
+      @smith = FactoryGirl.create(:contact, lastname: 'Smith')
+      @jones = FactoryGirl.create(:contact, lastname: 'Jones')
+      @bujo = FactoryGirl.create(:contact, lastname: 'Bujo')
     end
 
     context 'matching letters' do
