@@ -20,9 +20,9 @@ describe Contact do
 
   it 'is invalid with a duplicate email address' do
     Contact.create(firstname: 'Joe', lastname: 'Smith', email: 'smith@example.com')
-    contact = Contact.build(firstname: 'Jane', lastname: 'Bujo', email: 'smith@example.com')
+    contact = Contact.new(firstname: 'Jane', lastname: 'Bujo', email: 'smith@example.com')
     contact.valid?
-    expect(contact.errors[:email]).to include('has already be taken')
+    expect(contact.errors[:email]).to include('has already been taken')
   end
 
   # Checking the instance methods

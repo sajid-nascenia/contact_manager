@@ -18,7 +18,7 @@ dump.rdb
 /tmp
 
 # Ignore the database config
-/config/database.yml
+#/config/database.yml
 
 /config/application.yml
 
