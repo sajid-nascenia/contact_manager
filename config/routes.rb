@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   resources :contacts do
     member do
       patch :hide_contact

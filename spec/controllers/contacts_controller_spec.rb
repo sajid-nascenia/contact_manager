@@ -2,6 +2,13 @@ require 'rails_helper'
 
 describe ContactsController do
 
+  before :each do
+    user = create(:admin)
+    # session[:user_id] = user.id
+    allow(controller).to receive(:authenticate_user!).and_return(true)
+    allow(controller).to receive(:current_user).and_return(user)
+  end
+
   describe 'GET #index' do
 
     context 'without params[:letter]' do

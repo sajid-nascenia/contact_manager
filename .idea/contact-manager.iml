@@ -130,6 +130,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.0, RVM: ruby-2.3.0 [contact-manager]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.4.0, RVM: ruby-2.3.0 [contact-manager]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v6.0.3, RVM: ruby-2.3.0 [contact-manager]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.11, RVM: ruby-2.3.0 [contact-manager]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.3.0 [contact-manager]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.13.5, RVM: ruby-2.3.0 [contact-manager]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v9.0.6, RVM: ruby-2.3.0 [contact-manager]) [gem]" level="application" />
