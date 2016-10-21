@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18507d73-a7d7-4650-b4df-41df88ae9fd8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/users.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/contact-manager.iml" afterPath="$PROJECT_DIR$/.idea/contact-manager.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/contacts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/contacts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/contacts_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/contacts_controller_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/rails_helper.rb" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" />
     </list>
     <ignored path="contact-manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +32,8 @@
       <file leaf-file-name="contacts_controller_spec.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/controllers/contacts_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+            <state relative-caret-position="934">
+              <caret line="205" column="61" selection-start-line="205" selection-start-column="61" selection-end-line="205" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -628,12 +617,12 @@
       <updated>1476849238701</updated>
       <workItem from="1476849240498" duration="8478000" />
       <workItem from="1476936501823" duration="5565000" />
-      <workItem from="1477023201043" duration="3908000" />
+      <workItem from="1477023201043" duration="4275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17951000" />
+    <option name="totallyTimeSpent" value="18318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
@@ -915,8 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/contacts_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+        <state relative-caret-position="934">
+          <caret line="205" column="61" selection-start-line="205" selection-start-column="61" selection-end-line="205" selection-end-column="61" />
           <folding />
         </state>
       </provider>
