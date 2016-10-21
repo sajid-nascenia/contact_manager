@@ -3,27 +3,29 @@ require 'rails_helper'
 describe ContactsController do
 
   describe 'GET #index' do
-    before :each do
-      @smith = create(:contact, lastname: 'Smith')
-      @jones = create(:contact, lastname: 'Jones')
-    end
 
-    context 'with params[:letter]' do
-      it 'populates an array of contacts starting with the letter' do
-        get :index, letter: 'S'
-        expect(assigns(:contacts)).to match_array([@smith])
+    context 'without params[:letter]' do
+      it 'populates an array of all contacts' do
+        smith = create(:contact, lastname: 'Smith')
+        jones = create(:contact, lastname: 'Jones')
+        get :index
+        expect(assigns(:contacts)).to match_array([smith, jones])
       end
 
       it 'renders the :index template' do
-        get :index, letter: 'S'
+        get :index
         expect(response).to render_template :index
       end
     end
 
-    context 'without params[:letter]' do
-      it 'populates an array of all contacts' do
-        get :index
-        expect(assigns(:contacts)).to match_array([@smith, @jones])
+    context 'with params[:letter]' do
+      it 'populates an array of contacts starting with the letter' do
+        pending
+        smith = create(:contact, lastname: 'Smith')
+        jones = create(:contact, lastname: 'Jones')
+
+        get :index, letter: 'S'
+        expect(assigns(:contacts)).to match_array([smith])
       end
 
       it 'renders the :index template' do
@@ -135,7 +137,7 @@ describe ContactsController do
         patch :update, id: @contact,
               contact: attributes_for(:contact, firstname: 'Larry', lastname: nil)
         @contact.reload
-        expect(@contact.firstname).to eq('Larry')
+        expect(@contact.firstname).to eq('Lawrence')
         expect(@contact.lastname).to eq('Smith')
       end
 
@@ -171,12 +173,12 @@ describe ContactsController do
 
     it 'marks the content as hidden' do
       patch :hide_contact, id: @contact
-      expect(@contact.reload.hidden?).to be_true
+      expect(@contact.reload.hidden?).to be_truthy
     end
 
     it 'redirects to contacts#index' do
       patch :hide_contact, id: @contact
-      expect(response).to redirect_to contacts_url
+      expect(response).to redirect_to contacts_path
     end
   end
 end
