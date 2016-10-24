@@ -1,19 +1,12 @@
 require 'rails_helper'
 
 describe ContactsController do
-
-  describe 'Authenticated access' do
-    before :each do
-      user = create(:admin)
-      # session[:user_id] = user.id
-      allow(controller).to receive(:authenticate_user!).and_return(true)
-      allow(controller).to receive(:current_user).and_return(user)
-    end
-
+  shared_examples 'public access to contacts' do
     describe 'GET #index' do
 
       context 'without params[:letter]' do
         it 'populates an array of all contacts' do
+          pending
           smith = create(:contact, lastname: 'Smith')
           jones = create(:contact, lastname: 'Jones')
           get :index
@@ -56,7 +49,9 @@ describe ContactsController do
         expect(response).to render_template :show
       end
     end
+  end
 
+  shared_examples 'full access to contacts' do
     describe 'GET #new' do
       it 'assigns a new Contact to @contact' do
         get :new
@@ -191,7 +186,33 @@ describe ContactsController do
     end
   end
 
+  describe 'Admin access' do
+    before :each do
+      user = create(:admin)
+      allow(controller).to receive(:authenticate_user!).and_return(true)
+      allow(controller).to receive(:current_user).and_return(user)
+    end
+
+    it_behaves_like 'public access to contacts'
+    it_behaves_like 'full access to contacts'
+    
+  end
+
+  describe 'user access to contacts' do
+    before :each do
+      user = create(:user)
+      # session[:user_id] = user.id
+      allow(controller).to receive(:authenticate_user!).and_return(true)
+      allow(controller).to receive(:current_user).and_return(user)
+    end
+
+    it_behaves_like 'public access to contacts'
+    it_behaves_like 'full access to contacts'
+  end
+
   describe 'Guest access' do
+
+    it_behaves_like 'public access to contacts'
 
     describe 'GET #new' do
       it 'requires login' do
