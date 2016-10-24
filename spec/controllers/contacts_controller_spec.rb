@@ -188,22 +188,17 @@ describe ContactsController do
 
   describe 'Admin access' do
     before :each do
-      user = create(:admin)
-      allow(controller).to receive(:authenticate_user!).and_return(true)
-      allow(controller).to receive(:current_user).and_return(user)
+      sign_in create(:admin)
     end
 
     it_behaves_like 'public access to contacts'
     it_behaves_like 'full access to contacts'
-    
+
   end
 
   describe 'user access to contacts' do
     before :each do
-      user = create(:user)
-      # session[:user_id] = user.id
-      allow(controller).to receive(:authenticate_user!).and_return(true)
-      allow(controller).to receive(:current_user).and_return(user)
+      sign_in create(:user)
     end
 
     it_behaves_like 'public access to contacts'
